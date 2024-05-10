@@ -1,0 +1,14 @@
+{% extends 'base.html' %} {% block main %}
+<h3>Acción a realizar</h3>
+<a href="{{ url_for('login') }}">Iniciar sesión</a>
+<a href="{{ url_for('register') }}">Registrar usuario</a>
+<form action="" method="post">
+  <!-- Añadido method="post" al formulario -->
+  <input type="text" name="name" id="name" placeholder="nombre" />
+  <input type="submit" value="Enviar" />
+</form>
+<p>Contenido de la base de datos:</p>
+{% for name in data %}
+<p>{{ name[1] }}</p>
+<!-- Se asume que name[1] contiene el nombre -->
+{% endfor %} {% endblock %}
